@@ -2,3 +2,19 @@
 # emails. The parse method on the class should separate them into
 # unique email addresses. The delimiters to support are commas (',')
 # or whitespace (' ').
+
+require 'pry'
+class EmailAddressParser 
+
+    attr_accessor :email_address
+
+    def initialize(email_address)
+        @email_address = email_address
+    end 
+
+    def parse
+        email_address.split(/, | /).uniq
+        ##split is a String class method in Ruby which is used to split the given string 
+        ##into an array of substrings based on a pattern specified.
+    end 
+end 
